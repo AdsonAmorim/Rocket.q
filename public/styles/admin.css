@@ -1,0 +1,53 @@
+.content {
+    max-width: min(112rem, 90%);
+}
+
+.content header{
+    width: 100%;
+}
+
+.data h2 {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: var(--black);
+
+    margin-bottom: 2.4rem;
+    line-height: 4.2rem;
+}
+
+.data .rooms table {
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 0 .8rem .8rem .8rem;
+    text-align: center;
+}
+
+.data .rooms table tr,
+.data .rooms table .actions a {
+    color: rgba(255,255,255,.8);
+}
+
+.data .rooms table tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.data .rooms table tr th {
+    font-weight: bold;
+    font-size: 2.4rem;
+    margin-bottom: .8rem;
+}
+
+.data .rooms table .actions{
+    display: flex;
+    justify-content: center;
+}
+.data .rooms table .actions > a+a{
+    margin-left: 2.4rem;
+}
+
+.data .rooms table .actions img {
+    width: 2.4rem;
+    height: 2.4rem;
+}

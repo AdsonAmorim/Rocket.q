@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    --black:#0D114F;
+    --white:#FAFAFA;
+    --red:#E83F5B;
+    --light-blue:#E0ECFF;
+    --blue:#3485FF;
+    --background:#FBFCFF;
+    --overlay:#040911;
+    --icons-details:#A5B0C1;
+
+    --grey-dark:#4D5E77;
+    --grey-blue:#A1B2CD;
+    --grey-medium:#eaecf2;
+    --grey-light:#E5EAF1;
+
+    font-size: 62.5%;/*Setar o tamanho da fonte padrão do navegador para
+                        10px ao invés dos 16 para fácil manipulação*/
+}
+
+html[data-theme='dark']{ 
+    --black:#fff;
+    --white: #deff;
+    --light-blue: #A1B2CD;
+    --blue:#3485FFF2; 
+    --background:#000000e6;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    background: var(--background);  
+}
+
+body, button, input, textarea {
+                    /*menor tamanho, tamanho comum, tamanho máximo*/
+    font-size: clamp(14px,1.6rem,2vw);
+    font-family: 'Open Sans', sans-serif;
+}
+
+textarea {
+    color: var(--black);
+}
+
+.dark-mode input[type="checkbox"]{
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    border: .2rem solid var(--black);
+    -webkit-appearance: none;
+    outline: none;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.dark-mode input:checked[type="checkbox"]{
+    background: var(--black);
+}
+.dark-mode input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0; 
+    left: 0;
+    background: var(--blue);
+    transform: scale(1.1);
+    transition: .5s;
+}
+.dark-mode input:checked[type="checkbox"]::before{
+    left: 30px;
+}
+
+header a.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: var(--black);
+    font-size: clamp(20px,5vw,2.8rem);
+    letter-spacing:-.2rem;
+}
+
+header a span {
+    color: var(--blue);
+}
+
+header a img{
+    max-width: 44px;
+    margin-right: .8rem;
+}
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sr-only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+button, input, .button{
+    border-radius: .8rem;
+    height: 5rem;
+}
+
+button, .button {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+    line-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--blue);
+    color: var(--white);
+
+    transition: filter .2s;
+
+    cursor: pointer;
+}
+
+button:hover,.button:hover {
+    filter: brightness(1.2);
+}
+
+button > img,
+.button > img {
+    margin-right: 1rem;
+    width: 2rem;
+}
+.button.outlined,
+button.outlined {
+    background: var(--white);
+    color: var(--blue);
+    border:.2rem solid var(--blue);
+}
+
+button.red,
+.button.red {
+    background: var(--red);
+    color: var(--white);
+}
+
+button.grey,
+.button.grey{
+    background: var(--grey-light);
+    color:var(--grey-dark);
+}
+
+.content header {
+    width: 80%;
+    margin: 3.5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content header img {
+    width:16.7rem;
+}
+
+p {
+    color: var(--black);
+}
